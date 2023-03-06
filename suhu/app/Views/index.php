@@ -83,8 +83,8 @@
                             <tr>
                                 <td><?php echo $value['date'] ?></td>
                                 <td><?php echo $value['time'] ?></td>
-                                <td><?php echo $value['temp'] ?></td>
-                                <td><?php echo $value['hum'] ?></td>
+                                <td><?php echo $value['temp'] ?> °C</td>
+                                <td><?php echo $value['hum'] ?> %</td>
                                 <td><?php echo $value['fa'] ?></td>
                             </tr>
                          <?php endforeach; ?>
