@@ -4,12 +4,14 @@ namespace App\Controllers;
 use CodeIgniter\Controller;
 use App\Models\indexModel;
 use App\Models\userModel;
-use CodeIgniter\Email\Email;
 
 class Home extends BaseController
 {
+    private $email; // add this property
+
     function __construct(){
         $this->ews = new indexModel();
+        $this->email = \Config\Services::email();
         $this->checkTemp();
     }
 
@@ -34,12 +36,16 @@ class Home extends BaseController
                 $users = $userModel->findAll();
                 
                 foreach ($users as $user) {
-                    $email = \Config\Services::email();
-                    $email->setTo('tanzjder@gmail.com');
-                    $email->setFrom('emailtesarduino@gmail.com');
-                    $email->setSubject('High Temperature Alert');
-                    $email->setMessage('Temperature is above 24 degrees. Please take necessary action.');
-                    $email->send();
+                    $tujuan = "tanzjder@gmail.com";
+                    $this->email->setTo($tujuan);
+                    $sender = "emailtesarduino@gmail.com";
+                    $this->email->setFrom($sender);
+                    $subject = "High Temperature Alert";
+                    $this->email->setSubject($subject);
+                    $message = "Temperature is above 24 degrees. Please take necessary action.";
+                    $this->email->setMessage($message);
+                    // $this->email->setNewline(“\r\n”);
+                    $this->email->send();
                 }
                 
                 // Update record status to checked
@@ -47,10 +53,4 @@ class Home extends BaseController
             }
         }
     }
-
-    public function triggerCheckTemp() {
-        $this->checkTemp();
-        return redirect()->to(site_url('/')); // Redirect to homepage after checking temperatures
-    }
-    
 }

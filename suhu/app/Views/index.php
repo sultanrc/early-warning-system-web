@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <meta http-equiv="refresh" content="60">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Early Warning System </title>
@@ -188,6 +189,11 @@
         });
     });
     </script>
+    <!-- <script>
+    setInterval(function(){
+        location.reload();
+    }, 5000); // refresh every 60 seconds
+    </script> -->
     <script>
     // var chartData = {
     // 	labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
@@ -262,7 +268,7 @@
     });
 
     for (var i = 0; i < ews.length; i++) {
-        if (count == 50) { // reset setiap 50 data
+        if (count == 20) { // reset setiap 50 data
             chart.data.labels = [];
             chart.data.datasets[0].data = [];
             count = 0;
@@ -305,7 +311,7 @@
     });
 
     for (var i = 0; i < ews.length; i++) {
-        if (count == 50) { // reset setiap 50 data
+        if (count == 20) { // reset setiap 50 data
             chart.data.labels = [];
             chart.data.datasets[0].data = [];
             count = 0;
