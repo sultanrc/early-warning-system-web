@@ -12,12 +12,21 @@ class Home extends BaseController
     function __construct(){
         $this->ews = new indexModel();
         $this->email = \Config\Services::email();
-        $this->checkTemp();
     }
 
     public function index()
     {   
-        $this->checkTemp();
+        $email = service('email');
+        $email->setTo('emailtesarduino@gmail.com');
+        $email->setFrom('www.petrochina.co.id', 'Early Warning System');
+
+        $email->setSubject($subject);
+        $email->setMessage($message);
+
+        if (!$email->send()) {
+            $data = $email->printDebugger(['headers']);
+            print_r($data);
+        }
         $data['ews'] = $this->ews->findAll();
         return view('index', $data);
     }
