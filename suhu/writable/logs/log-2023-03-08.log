@@ -1,0 +1,12 @@
+CRITICAL - 2023-03-08 02:20:15 --> Attempt to read property "id" on array
+in APPPATH\Views\index.php on line 96.
+ 1 APPPATH\Views\index.php(96): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on array', 'APPPATH\\Views\\index.php', 96)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('index', [], true)
+ 5 APPPATH\Controllers\Home.php(20): view('index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
