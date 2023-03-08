@@ -4,7 +4,6 @@
 #include <stdarg.h>
 #include <string.h>
 
-
 void sheets_initialization();
 void Send_Data();
 void Google_Sheets_Init(char array_2d[10][20], String sheets_gas_id, int param_size);
@@ -40,11 +39,8 @@ void Google_Sheets_Init(char test[ ][20], String sheets_gas_id, int param_size)
 	#ifdef Debug_Serial_Mon
 	   for(int i=0;i<Count;i++)
 	   {
-			Serial.print("column_name= ");
-			Serial.println(column_name[i]);
 	   }
    #endif
-	
 }
 
 void Data_to_Sheets(int num, ...)
@@ -68,8 +64,6 @@ void float_to_string()
   {
     sprintf(Sensor_Values[j],"%.02f",random_values[j]);
 	#ifdef Debug_Serial_Mon
-		Serial.print("Sensor Values : ");
-		Serial.println(Sensor_Values[j]);
 	#endif
   }
 }
@@ -91,17 +85,12 @@ void Send_Data()
 		url = url+"&"+column_name[i]+"="+Sensor_Values[i];
 		i++;    
 	}
-  
-  Serial.print("requesting URL: ");
-  Serial.println(url);
-
   client.print(String("GET ") + url + " HTTP/1.1\r\n" +
          "Host: " + host + "\r\n" +
          "User-Agent: BuildFailureDetectorESP8266\r\n" +
          "Connection: close\r\n\r\n");
 
   #ifdef Debug_Serial_Mon
-  Serial.println("request sent");
   #endif
   while (client.connected()) 
   {
@@ -109,7 +98,6 @@ void Send_Data()
 	  if (line == "\r") 
 	  {
 		#ifdef Debug_Serial_Mon  
-		Serial.println("headers received");
 		#endif
 		break;
 	  }
@@ -119,22 +107,15 @@ void Send_Data()
   if (line.startsWith("{\"state\":\"success\"")) 
   {
 	#ifdef Debug_Serial_Mon
-	Serial.println("esp8266/Arduino CI successfull!");
 	#endif
   } 
   else 
   {
 	#ifdef Debug_Serial_Mon  
-	Serial.println("esp8266/Arduino CI has failed");
 	#endif
   }
   
   #ifdef Debug_Serial_Mon
-	  Serial.println("reply was:");
-	  Serial.println("==========");
-	  Serial.println(line);
-	  Serial.println("==========");
-	  Serial.println("closing connection");
   #endif
 	
 }
@@ -143,8 +124,6 @@ void sheets_initialization()
 	client.setInsecure(); 
   
   #ifdef Debug_Serial_Mon
-	  Serial.print("connecting to ");
-	  Serial.println(host);
   #endif
   
   if (!client.connect(host, httpsPort)) 
