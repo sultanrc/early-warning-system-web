@@ -5,7 +5,7 @@ use CodeIgniter\Model;
 
 class indexModel extends Model
 {
-    protected $table            = 'ews_table';
+    protected $table            = 'ews_table';  
     protected $primaryKey       = 'id';
-    protected $allowedFields    = ['date', 'time', 'temp', 'hum', 'fa'];
+    protected $allowedFields    = ['date', 'time', 'temp', 'hum', 'fa', 'status'];
 }
