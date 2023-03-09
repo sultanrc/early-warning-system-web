@@ -20,16 +20,18 @@ class Home extends BaseController
     {   
         $query = $this->ews->where('status', false)->first();
         
-        if ($query['temp'] >= 24) {
-            $email->setSubject('High Temperature Alert');
-            $email->setMessage('Temperature is ' + $query['temp'] + ' degrees. Please take necessary action.');
-
-            if (!$email->send()) {
-                $data = $email->printDebugger(['headers']);
-                print_r($data);
+        if($query){
+            if ($query['temp'] >= 24) {
+                $this->email->setSubject('High Temperature Alert');
+                $message = 'Temperature is ' . strval($query['temp']) . ' degrees. Please take necessary action.';
+                $this->email->setMessage($message);
+                if (!$this->email->send()) {
+                    $data = $this->email->printDebugger(['headers']);
+                    print_r($data);
+                }
             }
+            $this->ews->update($query['id'], ['status' => true]);
         }
-        $this->ews->update($query['id'], ['status' => true]);
         $data['ews'] = $this->ews->findAll();
         return view('index', $data);
     }
