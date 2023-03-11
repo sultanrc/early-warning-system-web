@@ -1,0 +1,106 @@
+CRITICAL - 2023-03-11 01:35:55 --> Undefined variable $pdf
+in APPPATH\Views\print.php on line 37.
+ 1 APPPATH\Views\print.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pdf', 'APPPATH\\Views\\print.php', 37)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\print.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('print', [], true)
+ 5 APPPATH\Controllers\PrintController.php(31): view('print', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PrintController->print()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PrintController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-03-11 02:13:17 --> Undefined property: App\Controllers\PrintController::$load
+in APPPATH\Controllers\PrintController.php on line 26.
+ 1 APPPATH\Controllers\PrintController.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\PrintController::$load', 'APPPATH\\Controllers\\PrintController.php', 26)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PrintController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PrintController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-03-11 02:14:31 --> Undefined property: App\Controllers\PrintController::$load
+in APPPATH\Controllers\PrintController.php on line 12.
+ 1 APPPATH\Controllers\PrintController.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\PrintController::$load', 'APPPATH\\Controllers\\PrintController.php', 12)
+ 2 SYSTEMPATH\CodeIgniter.php(906): App\Controllers\PrintController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(490): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-03-11 02:23:35 --> The PHP GD extension is required, but is not installed.
+in VENDORPATH\dompdf\dompdf\src\Renderer\AbstractRenderer.php on line 284.
+ 1 VENDORPATH\dompdf\dompdf\src\Renderer\AbstractRenderer.php(84): Dompdf\Renderer\AbstractRenderer->_background_image('file://F:\\XAMPP\\htdocs\\suhu\\public\\assets\\images\\logo.png', 747.8742519685039, 117.80574803149608, 37.5, 37.5, Object(Dompdf\Css\Style))
+ 2 VENDORPATH\dompdf\dompdf\src\Renderer\Image.php(31): Dompdf\Renderer\AbstractRenderer->_render_background(Object(Dompdf\FrameDecorator\Image), [...])
+ 3 VENDORPATH\dompdf\dompdf\src\Renderer.php(289): Dompdf\Renderer\Image->render(Object(Dompdf\FrameDecorator\Image))
+ 4 VENDORPATH\dompdf\dompdf\src\Renderer.php(128): Dompdf\Renderer->_render_frame('image', Object(Dompdf\FrameDecorator\Image))
+ 5 VENDORPATH\dompdf\dompdf\src\Renderer.php(195): Dompdf\Renderer->render(Object(Dompdf\FrameDecorator\Image))
+ 6 VENDORPATH\dompdf\dompdf\src\Renderer.php(195): Dompdf\Renderer->render(Object(Dompdf\FrameDecorator\Block))
+ 7 VENDORPATH\dompdf\dompdf\src\FrameReflower\Page.php(149): Dompdf\Renderer->render(Object(Dompdf\FrameDecorator\Block))
+ 8 VENDORPATH\dompdf\dompdf\src\FrameDecorator\AbstractFrameDecorator.php(913): Dompdf\FrameReflower\Page->reflow(null)
+ 9 VENDORPATH\dompdf\dompdf\src\Dompdf.php(765): Dompdf\FrameDecorator\AbstractFrameDecorator->reflow()
+10 APPPATH\Controllers\PrintController.php(22): Dompdf\Dompdf->render()
+11 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PrintController->index()
+12 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PrintController))
+13 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-03-11 02:23:41 --> Allowed memory size of 536870912 bytes exhausted (tried to allocate 262148096 bytes)
+【Previous Exception】
+Exception
+The PHP GD extension is required, but is not installed.
+#0 F:\XAMPP\htdocs\suhu\vendor\dompdf\dompdf\src\Renderer\AbstractRenderer.php(84): Dompdf\Renderer\AbstractRenderer->_background_image('file://F:\\XAMPP...', 747.8742519685, 117.8057480315, 37.5, 37.5, Object(Dompdf\Css\Style))
+#1 F:\XAMPP\htdocs\suhu\vendor\dompdf\dompdf\src\Renderer\Image.php(31): Dompdf\Renderer\AbstractRenderer->_render_background(Object(Dompdf\FrameDecorator\Image), Array)
+#2 F:\XAMPP\htdocs\suhu\vendor\dompdf\dompdf\src\Renderer.php(289): Dompdf\Renderer\Image->render(Object(Dompdf\FrameDecorator\Image))
+#3 F:\XAMPP\htdocs\suhu\vendor\dompdf\dompdf\src\Renderer.php(128): Dompdf\Renderer->_render_frame('image', Object(Dompdf\FrameDecorator\Image))
+#4 F:\XAMPP\htdocs\suhu\vendor\dompdf\dompdf\src\Renderer.php(195): Dompdf\Renderer->render(Object(Dompdf\FrameDecorator\Image))
+#5 F:\XAMPP\htdocs\suhu\vendor\dompdf\dompdf\src\Renderer.php(195): Dompdf\Renderer->render(Object(Dompdf\FrameDecorator\Block))
+#6 F:\XAMPP\htdocs\suhu\vendor\dompdf\dompdf\src\FrameReflower\Page.php(149): Dompdf\Renderer->render(Object(Dompdf\FrameDecorator\Block))
+#7 F:\XAMPP\htdocs\suhu\vendor\dompdf\dompdf\src\FrameDecorator\AbstractFrameDecorator.php(913): Dompdf\FrameReflower\Page->reflow(NULL)
+#8 F:\XAMPP\htdocs\suhu\vendor\dompdf\dompdf\src\Dompdf.php(765): Dompdf\FrameDecorator\AbstractFrameDecorator->reflow()
+#9 F:\XAMPP\htdocs\suhu\app\Controllers\PrintController.php(22): Dompdf\Dompdf->render()
+#10 F:\XAMPP\htdocs\suhu\system\CodeIgniter.php(934): App\Controllers\PrintController->index()
+#11 F:\XAMPP\htdocs\suhu\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PrintController))
+#12 F:\XAMPP\htdocs\suhu\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 F:\XAMPP\htdocs\suhu\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#14 F:\XAMPP\htdocs\suhu\system\Commands\Server\rewrite.php(47): require_once('F:\\XAMPP\\htdocs...')
+#15 {main}
+in APPPATH\Views\errors\html\error_exception.php on line 101.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-03-11 02:23:53 --> The PHP GD extension is required, but is not installed.
+in VENDORPATH\dompdf\dompdf\src\Renderer\AbstractRenderer.php on line 284.
+ 1 VENDORPATH\dompdf\dompdf\src\Renderer\AbstractRenderer.php(84): Dompdf\Renderer\AbstractRenderer->_background_image('file://F:\\XAMPP\\htdocs\\suhu\\public\\assets\\images\\logo.png', 747.8742519685039, 117.80574803149608, 37.5, 37.5, Object(Dompdf\Css\Style))
+ 2 VENDORPATH\dompdf\dompdf\src\Renderer\Image.php(31): Dompdf\Renderer\AbstractRenderer->_render_background(Object(Dompdf\FrameDecorator\Image), [...])
+ 3 VENDORPATH\dompdf\dompdf\src\Renderer.php(289): Dompdf\Renderer\Image->render(Object(Dompdf\FrameDecorator\Image))
+ 4 VENDORPATH\dompdf\dompdf\src\Renderer.php(128): Dompdf\Renderer->_render_frame('image', Object(Dompdf\FrameDecorator\Image))
+ 5 VENDORPATH\dompdf\dompdf\src\Renderer.php(195): Dompdf\Renderer->render(Object(Dompdf\FrameDecorator\Image))
+ 6 VENDORPATH\dompdf\dompdf\src\Renderer.php(195): Dompdf\Renderer->render(Object(Dompdf\FrameDecorator\Block))
+ 7 VENDORPATH\dompdf\dompdf\src\FrameReflower\Page.php(149): Dompdf\Renderer->render(Object(Dompdf\FrameDecorator\Block))
+ 8 VENDORPATH\dompdf\dompdf\src\FrameDecorator\AbstractFrameDecorator.php(913): Dompdf\FrameReflower\Page->reflow(null)
+ 9 VENDORPATH\dompdf\dompdf\src\Dompdf.php(765): Dompdf\FrameDecorator\AbstractFrameDecorator->reflow()
+10 APPPATH\Controllers\PrintController.php(22): Dompdf\Dompdf->render()
+11 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PrintController->index()
+12 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PrintController))
+13 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-03-11 02:24:00 --> Allowed memory size of 536870912 bytes exhausted (tried to allocate 260050944 bytes)
+【Previous Exception】
+Exception
+The PHP GD extension is required, but is not installed.
+#0 F:\XAMPP\htdocs\suhu\vendor\dompdf\dompdf\src\Renderer\AbstractRenderer.php(84): Dompdf\Renderer\AbstractRenderer->_background_image('file://F:\\XAMPP...', 747.8742519685, 117.8057480315, 37.5, 37.5, Object(Dompdf\Css\Style))
+#1 F:\XAMPP\htdocs\suhu\vendor\dompdf\dompdf\src\Renderer\Image.php(31): Dompdf\Renderer\AbstractRenderer->_render_background(Object(Dompdf\FrameDecorator\Image), Array)
+#2 F:\XAMPP\htdocs\suhu\vendor\dompdf\dompdf\src\Renderer.php(289): Dompdf\Renderer\Image->render(Object(Dompdf\FrameDecorator\Image))
+#3 F:\XAMPP\htdocs\suhu\vendor\dompdf\dompdf\src\Renderer.php(128): Dompdf\Renderer->_render_frame('image', Object(Dompdf\FrameDecorator\Image))
+#4 F:\XAMPP\htdocs\suhu\vendor\dompdf\dompdf\src\Renderer.php(195): Dompdf\Renderer->render(Object(Dompdf\FrameDecorator\Image))
+#5 F:\XAMPP\htdocs\suhu\vendor\dompdf\dompdf\src\Renderer.php(195): Dompdf\Renderer->render(Object(Dompdf\FrameDecorator\Block))
+#6 F:\XAMPP\htdocs\suhu\vendor\dompdf\dompdf\src\FrameReflower\Page.php(149): Dompdf\Renderer->render(Object(Dompdf\FrameDecorator\Block))
+#7 F:\XAMPP\htdocs\suhu\vendor\dompdf\dompdf\src\FrameDecorator\AbstractFrameDecorator.php(913): Dompdf\FrameReflower\Page->reflow(NULL)
+#8 F:\XAMPP\htdocs\suhu\vendor\dompdf\dompdf\src\Dompdf.php(765): Dompdf\FrameDecorator\AbstractFrameDecorator->reflow()
+#9 F:\XAMPP\htdocs\suhu\app\Controllers\PrintController.php(22): Dompdf\Dompdf->render()
+#10 F:\XAMPP\htdocs\suhu\system\CodeIgniter.php(934): App\Controllers\PrintController->index()
+#11 F:\XAMPP\htdocs\suhu\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PrintController))
+#12 F:\XAMPP\htdocs\suhu\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 F:\XAMPP\htdocs\suhu\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#14 F:\XAMPP\htdocs\suhu\system\Commands\Server\rewrite.php(47): require_once('F:\\XAMPP\\htdocs...')
+#15 {main}
+in APPPATH\Views\errors\html\error_exception.php on line 101.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()

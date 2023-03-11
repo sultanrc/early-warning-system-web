@@ -35,4 +35,22 @@ class Home extends BaseController
         $data['ews'] = $this->ews->findAll();
         return view('index', $data);
     }
+
+    public function printreport()
+    {
+        $data['ews'] = $this->ews->findAll();
+        
+        // Load the view file with the data
+        $html = view('report', $data);
+        
+        // Load the library
+        $this->load->library('pdf');
+
+        // Set the pdf filename
+        $filename = 'report.pdf';
+
+        // Generate the pdf file
+        $this->pdf->generate($html, $filename, true, 'A4', 'portrait');
+    }
+
 }

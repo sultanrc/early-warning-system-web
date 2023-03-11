@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="refresh" content="60">
+    <!-- <meta http-equiv="refresh" content="60"> -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Early Warning System </title>
@@ -34,12 +34,18 @@
             </div>
         </div>
     </nav>
-
     <div class="container">
         <div class="row">
-            <div class="col-lg-3">
+            <div class="col-lg-4">
                 <div class="row">
                     <div class="col-a">
+                        <div id="chart-container">
+                            <canvas id="myChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
                         <div class="card" style="margin-top: 5px;">
                             <div class="card-header">
                                 <strong>Hide column</strong>
@@ -57,18 +63,27 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-a">
-                        <div id="chart-container">
-                            <canvas id="myChart"></canvas>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-a">
-                        <div id="chart-container">
-                            <canvas id="myChart2"></canvas>
+                    <div class="col">
+                        <div class="card" style="margin-top: 5px;">
+                            <div class="card-header">
+                                <strong>Print report</strong>
+                            </div>
+                            <div class="card-body" style="background: #eadcdc;">
+                            <form>
+                                <label for="date">Date:</label>
+                                <input type="date" id="date" name="date"><br>
+
+                                <label for="temperature">Type:</label>
+                                <select id="temperature" name="temperature">
+                                    <option value="cold">Temperature</option>
+                                    <option value="mild">Humidity</option>
+                                </select><br>
+                            </form>
+                            <br>
+                            <input type="button" value="Print" onclick="window.open('<?php echo site_url('/printpdf')?>','blank')"/>
+                                <!-- <button class="unique-btn" onclick="window.print()">Print</button> -->
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -97,7 +112,6 @@
                             <?php endforeach; ?>
                         </tbody>
                     </table>
-                    <a href="<?=site_url('/trigger-check-temp')?>" class="btn btn-primary">Check Temperature</a>
                 </div>
             </div>
         </div>
@@ -136,113 +150,89 @@
         </footer>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            // Show the modal when the button is clicked
+            $('[data-toggle="modal"]').click(function(){
+                $($(this).data("target")).show();
+            });
+
+            // Hide the modal when the close button is clicked
+            $(".modal-footer button").click(function(){
+                $(this).closest(".modal").hide();
+            });
+        });
+    </script>
+
+    <!-- JavaScript files -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.3/umd/popper.min.js"></script>
+
+
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script> -->
     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/theme.js"></script>
     <script>
-    const checkbox1 = document.getElementById('hide-col-1');
-    const checkbox2 = document.getElementById('hide-col-2');
-    const checkbox3 = document.getElementById('hide-col-3');
-    const table = document.getElementById('mydatatable');
+        const checkbox1 = document.getElementById('hide-col-1');
+        const checkbox2 = document.getElementById('hide-col-2');
+        const checkbox3 = document.getElementById('hide-col-3');
+        const table = document.getElementById('mydatatable');
 
-    checkbox1.addEventListener('change', function() {
-        if (this.checked) {
-            hideColumn(3);
-        } else {
-            showColumn(3);
-        }
-    });
+        checkbox1.addEventListener('change', function() {
+            if (this.checked) {
+                hideColumn(3);
+            } else {
+                showColumn(3);
+            }
+        });
 
-    checkbox2.addEventListener('change', function() {
-        if (this.checked) {
-            hideColumn(4);
-        } else {
-            showColumn(4);
-        }
-    });
+        checkbox2.addEventListener('change', function() {
+            if (this.checked) {
+                hideColumn(4);
+            } else {
+                showColumn(4);
+            }
+        });
 
-    checkbox3.addEventListener('change', function() {
-        if (this.checked) {
-            hideColumn(5);
-        } else {
-            showColumn(5);
-        }
-    });
+        checkbox3.addEventListener('change', function() {
+            if (this.checked) {
+                hideColumn(5);
+            } else {
+                showColumn(5);
+            }
+        });
 
-    function hideColumn(columnIndex) {
-        for (let i = 0; i < table.rows.length; i++) {
-            table.rows[i].cells[columnIndex - 1].style.display = 'none';
+        function hideColumn(columnIndex) {
+            for (let i = 0; i < table.rows.length; i++) {
+                table.rows[i].cells[columnIndex - 1].style.display = 'none';
+            }
         }
-    }
 
-    function showColumn(columnIndex) {
-        for (let i = 0; i < table.rows.length; i++) {
-            table.rows[i].cells[columnIndex - 1].style.display = '';
+        function showColumn(columnIndex) {
+            for (let i = 0; i < table.rows.length; i++) {
+                table.rows[i].cells[columnIndex - 1].style.display = '';
+            }
         }
-    }
     </script>
     <script>
-    $(document).ready(function() {
-        $('#mydatatable').DataTable({
-            paging: true
+        $(document).ready(function() {
+            $('#mydatatable').DataTable({
+                paging: true
+            });
         });
-    });
     </script>
     <!-- <script>
-    setInterval(function(){
-        location.reload();
-    }, 5000); // refresh every 60 seconds
+        setInterval(function(){
+            location.reload();
+        }, 5000); // refresh every 60 seconds
     </script> -->
     <script>
-    // var chartData = {
-    // 	labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-    // 	datasets: [{
-    // 		label: 'Temperature',
-    // 		data: [12, 19, 3, 5, 2, 3, 7],
-    // 		backgroundColor: 'rgba(255, 99, 132, 0.2)',
-    // 		borderColor: 'rgba(255, 99, 132, 1)',
-    // 		borderWidth: 1
-    // 	}]
-    // };
-    // var ctx = document.getElementById('myChart').getContext('2d');
-    // 	var myChart = new Chart(ctx, {
-    // 	type: 'bar',
-    // 	data: chartData,
-    // });
-
-    // var ews = ?php echo json_encode($ews); ?>;
-    // var dates = [];
-    // var temps = [];
-
-    // for (var i = 0; i < ews.length; i++) {
-    //     dates.push(ews[i].date);
-    //     temps.push(ews[i].temp);
-    // }
-
-    // var ctx = document.getElementById('myChart').getContext('2d');
-    // var chart = new Chart(ctx, {
-    //     type: 'line',
-    //     data: {
-    //         labels: dates,
-    //         datasets: [{
-    //             label: 'Temperature',
-    //             data: temps,
-    //             borderColor: 'rgb(255, 99, 132)',
-    //             borderWidth: 1
-    //         }]
-    //     },
-    //     options: {
-    //         scales: {
-    //             y: {
-    //                 beginAtZero: true
-    //             }
-    //         }
-    //     }
-    // });
     var ews = <?php echo json_encode($ews); ?>;
-    var dates = [];
+    var times = [];
     var temps = [];
+    var hums = [];
+
     var count = 0; // variabel hitungan
 
     var ctx = document.getElementById('myChart').getContext('2d');
@@ -256,44 +246,8 @@
                 backgroundColor: 'red',
                 borderColor: 'red',
                 borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-
-    for (var i = 0; i < ews.length; i++) {
-        if (count == 20) { // reset setiap 50 data
-            chart.data.labels = [];
-            chart.data.datasets[0].data = [];
-            count = 0;
-        }
-
-        chart.data.labels.push(ews[i].date);
-        chart.data.datasets[0].data.push(ews[i].temp);
-
-        count++;
-    }
-
-    chart.update();
-    </script>
-    <script>
-    var ews = <?php echo json_encode($ews); ?>;
-    var dates = [];
-    var hums = [];
-    var count = 0; // variabel hitungan
-
-    var ctx = document.getElementById('myChart2').getContext('2d');
-    var chart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: [],
-            datasets: [{
+            },
+            {
                 label: 'Humidity',
                 data: [],
                 backgroundColor: 'blue',
@@ -303,9 +257,19 @@
         },
         options: {
             scales: {
-                y: {
-                    beginAtZero: true
-                }
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }],
+                xAxes: [{
+                    type: 'time',
+                    time: {
+                        displayFormats: {
+                            hour: 'HH:mm'
+                        }
+                    }
+                }]
             }
         }
     });
@@ -314,17 +278,20 @@
         if (count == 20) { // reset setiap 50 data
             chart.data.labels = [];
             chart.data.datasets[0].data = [];
+            chart.data.datasets[1].data = [];
             count = 0;
         }
 
-        chart.data.labels.push(ews[i].date);
-        chart.data.datasets[0].data.push(ews[i].hum);
+        chart.data.labels.push(ews[i].time);
+        chart.data.datasets[0].data.push(ews[i].temp);
+        chart.data.datasets[1].data.push(ews[i].hum);
 
         count++;
     }
 
     chart.update();
-    </script>
+</script>
+
 </body>
 
 </html>
