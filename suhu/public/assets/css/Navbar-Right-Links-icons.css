@@ -60,13 +60,15 @@
   height: 40px;
 }
 
-.col-a {
-  margin-bottom: 20px;
+.text-outline {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
+
 
 #chart-container {
   width: 100%;
   height: auto;
+  color:#f6f4f4;
 }
 
 nav {
@@ -95,16 +97,75 @@ nav a {
   text-decoration: none;
 }
 
+.fixed-top {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.col-chart{
+  padding-top: 20px;
+}
+
+.checkbox{
+  text-align: center;
+  padding: 20px;
+  background: #eadcdc;
+}
+
+.checkbox2{
+  text-align: left;
+  padding: 20px;
+  background: #eadcdc;
+}
+
+.rectangle {
+  width: 40px;
+  height: 20px;
+  background-color: #008080;
+  border: 2px solid #000;
+  margin: 20px;
+}
+
+
+.print{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  height: 110px;
+  background: #eadcdc;
+}
+
+.filter{
+  padding: 20px;
+  height: 250px;
+  background: #eadcdc;
+}
+
+.card-body{
+  height: 140px;
+}
+
+.card {
+  margin-top: 10px;
+}
+
 .unique-btn {
   background-color: #d2d0d0;
   color: #000000;
   border: 1px solid #767676;
-  border-radius: 10px;
-  padding: 10px 15px;
+  border-radius: 5px;
+  padding: 3px 10px;
   font-size: 15px;
   cursor: pointer;
   transition: all 0.3s ease;
-  float: right;
+  float: center;
+  margin-top: 8px;
+  margin-left: 4px;
 }
 
 .unique-btn:hover {
@@ -112,4 +173,17 @@ nav a {
   color: #ffffff;
   border: 2px solid #ffffff;
 }
+
+#chart-container {
+  margin-top: 20px; /* adjust the margin top to your preference */
+}
+
+#myChart {
+  width: 800px; /* Change the width value as needed */
+  height: 300px; /* Change the height value as needed */
+}
+
+
+
+
 

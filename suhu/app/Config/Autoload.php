@@ -43,6 +43,7 @@ class Autoload extends AutoloadConfig
         APP_NAMESPACE => APPPATH, // For custom app namespace
         'Config'      => APPPATH . 'Config',
     ];
+    
 
     /**
      * -------------------------------------------------------------------
@@ -94,4 +95,6 @@ class Autoload extends AutoloadConfig
      * @phpstan-var list<string>
      */
     public $helpers = [];
+
+    
 }

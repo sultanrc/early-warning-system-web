@@ -1,96 +1,100 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>PetroChina International Jabung</title>
+	<title>Print View</title>
 	<style>
-		body {
-			margin: 0;
-			padding: 0;
-			background-color: #f7f7f7;
-			font-family: Arial, sans-serif;
-			font-size: 16px;
-			line-height: 1.5;
-		}
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+        }
 
-		header {
-			background-color: #333;
-			color: #fff;
-			text-align: center;
-			padding: 20px;
-            
-		}
-
-		footer {
-			background-color: #333;
-			color: #fff;
-			text-align: center;
-			padding: 20px;
-			position: absolute;
-			bottom: 0;
-			width: 100%;
-		}
+        .address {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 150;
+            font-size: 11px;
+        }
+        .container {
+            margin: 0 auto;
+            max-width: 800px;
+            padding: 20px;
+        }
 
         table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-bottom: 1em;
-        margin_top: 1em;
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1em;
+            margin-top: 1em;
         }
 
         th {
-        background-color: #333;
-        color: #fff;
-        text-align: left;
-        padding: 0.5em;
+            background-color: #fff;
+            color: #000;
+            text-align: left;
+            padding: 0.5em;
         }
 
         td {
-        border: 1px solid #ccc;
-        padding: 0.5em;
+            border: 1px solid #ccc;
+            padding: 0.5em;
         }
 
         tr:nth-child(even) {
-        background-color: #f2f2f2;
+            background-color: #f2f2f2;
         }
 
         .table-responsive {
-        overflow-x: auto;
+            overflow-x: auto;
+        }
+        
+        h2 {
+            margin-top: 0;
+            margin-bottom: 10px;
         }
 
-        .logo {
-			display: inline-block;
-			vertical-align: middle;
-			margin: 0 10px;
-			max-height: 50px;
-		}
+        hr {
+            border: none;
+            height: 1px;
+            background-color: #ccc;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
 
-		.logo-left {
-			float: left;
-		}
-
-		.logo-right {
-			float: right;
-            imag 
-		}
-        .logo-container {
+        form {
             display: inline-block;
-            vertical-align: middle;
-            width: 50%;
-            text-align: center;
+            margin-right: 10px;
         }
-	</style>
+
+        label {
+            display: inline-block;
+            margin-right: 10px;
+        }
+    </style>
 </head>
 <body>
-<header>
-	<img class="logo logo-left" src="assets/images/logo.png" alt=" ">
-	<h1>PetroChina International Jabung</h1>
-	<img class="logo logo-right" src="assets/images/logo.png" alt= "">
-</header>
     <div class="container">
         <div class="col">
             <div class="table-responsive">
                 <table>
                     <thead>
+                        <tr>
+                            <tr>
+                            <th colspan="5" style="text-align: center;">
+                                <div style="text-align: center;">
+                                    <div style="font-size: 13px; text-align:left;">Date: <?php echo $date; ?></div>
+                                    <hr>
+                                    <div style="font-size: 17px;">Early Warning System Report</div>
+                                    <hr>
+                                    <div style="font-size: 12px;">PetroChina International Jabung Ltd</div>
+                                    <div class="address">JI. Ahmad Yani RT. 19 RW. 04 Kel. Pandan Jaya</div>
+                                    <div class="address">Kec. Geragai Kab. Tanjung Jabung Timur - 36764 - Jambi</div>
+                                    <div class="address" style="margin-bottom:10px;">Phone: (0741) 570488/570353, Fax: (0741) 570211</div>
+                                    <hr>
+                                </div>
+                            </th>
+                        </tr>
+                        </tr>
                         <tr>
                             <th>Date</th>
                             <th>Time</th>
@@ -100,24 +104,20 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($ews as $value): ?>
-                        <tr>
-                            <td><?php echo $value['date'] ?></td>
-                            <td><?php echo $value['time'] ?></td>
-                            <td><?php echo $value['temp'] ?> °C</td>
-                            <td><?php echo $value['hum'] ?> %</td>
-                            <td><?php echo $value['fa'] ?></td>
-                        </tr>
+                        <?php foreach ($ews as $row) : ?>
+                            <tr>
+                                <td><?= esc($row->date) ?></td>
+                                <td><?= esc($row->time) ?></td>
+                                <td><?= esc($row->temp) ?></td>
+                                <td><?= esc($row->hum) ?></td>
+                                <td><?= esc($row->fa) ?></td>
+                            </tr>
                         <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
-
-	<footer>
-		<p>JI. Ahmad Yani RT. 19 RW. 04 Kcl. Pandan Jaya, Kee. Gcragai Kab. Tanjung .labung Timur - 36764 - Jambi<br>
-			Phone: (0741) 570488/570353, Fax: (0741) 57021I</p>
-	</footer>
 </body>
+
 </html>

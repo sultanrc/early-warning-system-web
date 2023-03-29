@@ -30,9 +30,10 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->get('/print', 'PrintController::print');
-$routes->get('/printpdf', 'PrintController::index');
-
+$routes->get('/print', 'Report::index');
+$routes->get('/printpdf', 'Home::generate');
+$routes->post('/predict','Python::predict');
+$routes->get('/test', 'Python::index');
 
 
 /*

@@ -1,0 +1,331 @@
+ERROR - 2023-03-14 00:14:32 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in F:\XAMPP\htdocs\suhu\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 F:\XAMPP\htdocs\suhu\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'root', '', 'ews', 3306, '', 0)
+#1 F:\XAMPP\htdocs\suhu\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 F:\XAMPP\htdocs\suhu\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 F:\XAMPP\htdocs\suhu\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 F:\XAMPP\htdocs\suhu\system\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#5 F:\XAMPP\htdocs\suhu\system\BaseModel.php(656): CodeIgniter\Model->doFirst()
+#6 F:\XAMPP\htdocs\suhu\app\Controllers\Home.php(21): CodeIgniter\BaseModel->first()
+#7 F:\XAMPP\htdocs\suhu\system\CodeIgniter.php(934): App\Controllers\Home->index()
+#8 F:\XAMPP\htdocs\suhu\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 F:\XAMPP\htdocs\suhu\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 F:\XAMPP\htdocs\suhu\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 F:\XAMPP\htdocs\suhu\system\Commands\Server\rewrite.php(47): require_once('F:\\XAMPP\\htdocs...')
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in F:\XAMPP\htdocs\suhu\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 F:\XAMPP\htdocs\suhu\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 F:\XAMPP\htdocs\suhu\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 F:\XAMPP\htdocs\suhu\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 F:\XAMPP\htdocs\suhu\system\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#4 F:\XAMPP\htdocs\suhu\system\BaseModel.php(656): CodeIgniter\Model->doFirst()
+#5 F:\XAMPP\htdocs\suhu\app\Controllers\Home.php(21): CodeIgniter\BaseModel->first()
+#6 F:\XAMPP\htdocs\suhu\system\CodeIgniter.php(934): App\Controllers\Home->index()
+#7 F:\XAMPP\htdocs\suhu\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 F:\XAMPP\htdocs\suhu\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 F:\XAMPP\htdocs\suhu\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 F:\XAMPP\htdocs\suhu\system\Commands\Server\rewrite.php(47): require_once('F:\\XAMPP\\htdocs...')
+#11 {main}
+CRITICAL - 2023-03-14 00:14:32 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `ews_table`
+WHERE `status` = :status:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(656): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Controllers\Home.php(21): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+ERROR - 2023-03-14 00:14:37 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in F:\XAMPP\htdocs\suhu\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 F:\XAMPP\htdocs\suhu\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'root', '', 'ews', 3306, '', 0)
+#1 F:\XAMPP\htdocs\suhu\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 F:\XAMPP\htdocs\suhu\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 F:\XAMPP\htdocs\suhu\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 F:\XAMPP\htdocs\suhu\system\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#5 F:\XAMPP\htdocs\suhu\system\BaseModel.php(656): CodeIgniter\Model->doFirst()
+#6 F:\XAMPP\htdocs\suhu\app\Controllers\Home.php(21): CodeIgniter\BaseModel->first()
+#7 F:\XAMPP\htdocs\suhu\system\CodeIgniter.php(934): App\Controllers\Home->index()
+#8 F:\XAMPP\htdocs\suhu\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 F:\XAMPP\htdocs\suhu\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 F:\XAMPP\htdocs\suhu\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 F:\XAMPP\htdocs\suhu\system\Commands\Server\rewrite.php(47): require_once('F:\\XAMPP\\htdocs...')
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in F:\XAMPP\htdocs\suhu\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 F:\XAMPP\htdocs\suhu\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 F:\XAMPP\htdocs\suhu\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 F:\XAMPP\htdocs\suhu\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 F:\XAMPP\htdocs\suhu\system\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#4 F:\XAMPP\htdocs\suhu\system\BaseModel.php(656): CodeIgniter\Model->doFirst()
+#5 F:\XAMPP\htdocs\suhu\app\Controllers\Home.php(21): CodeIgniter\BaseModel->first()
+#6 F:\XAMPP\htdocs\suhu\system\CodeIgniter.php(934): App\Controllers\Home->index()
+#7 F:\XAMPP\htdocs\suhu\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 F:\XAMPP\htdocs\suhu\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 F:\XAMPP\htdocs\suhu\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 F:\XAMPP\htdocs\suhu\system\Commands\Server\rewrite.php(47): require_once('F:\\XAMPP\\htdocs...')
+#11 {main}
+CRITICAL - 2023-03-14 00:14:37 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `ews_table`
+WHERE `status` = :status:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(656): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Controllers\Home.php(21): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-03-14 02:35:07 --> Undefined variable $ews
+in APPPATH\Views\print.php on line 132.
+ 1 APPPATH\Views\print.php(132): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $ews', 'APPPATH\\Views\\print.php', 132)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\print.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('print', [], true)
+ 5 APPPATH\Controllers\PrintController.php(34): view('print', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PrintController->print()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PrintController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-03-14 02:35:30 --> Undefined variable $model
+in APPPATH\Controllers\PrintController.php on line 34.
+ 1 APPPATH\Controllers\PrintController.php(34): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $model', 'APPPATH\\Controllers\\PrintController.php', 34)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PrintController->print()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PrintController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-03-14 02:47:47 --> Call to undefined function set_value()
+in APPPATH\Views\print.php on line 103.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('print', [], true)
+ 4 APPPATH\Controllers\PrintController.php(32): view('print', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PrintController->print()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PrintController))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-03-14 02:48:42 --> Call to undefined function set_value()
+in APPPATH\Views\print.php on line 103.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('print', [], true)
+ 4 APPPATH\Controllers\PrintController.php(32): view('print', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PrintController->print()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PrintController))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-03-14 02:48:43 --> Call to undefined function set_value()
+in APPPATH\Views\print.php on line 103.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('print', [], true)
+ 4 APPPATH\Controllers\PrintController.php(32): view('print', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PrintController->print()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PrintController))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-03-14 02:48:46 --> Call to undefined function set_value()
+in APPPATH\Views\print.php on line 103.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('print', [], true)
+ 4 APPPATH\Controllers\PrintController.php(32): view('print', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PrintController->print()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PrintController))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-03-14 02:48:47 --> Call to undefined function set_value()
+in APPPATH\Views\print.php on line 103.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('print', [], true)
+ 4 APPPATH\Controllers\PrintController.php(32): view('print', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PrintController->print()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PrintController))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-03-14 03:00:30 --> Undefined variable $reportData
+in APPPATH\Views\print.php on line 132.
+ 1 APPPATH\Views\print.php(132): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $reportData', 'APPPATH\\Views\\print.php', 132)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\print.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('print', [], true)
+ 5 APPPATH\Controllers\PrintController.php(33): view('print', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PrintController->print()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PrintController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-03-14 03:01:21 --> Cannot use object of type stdClass as array
+in APPPATH\Views\index.php on line 106.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('index', [], true)
+ 4 APPPATH\Controllers\Home.php(36): view('index', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->index()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-03-14 03:01:26 --> Cannot use object of type stdClass as array
+in APPPATH\Views\index.php on line 106.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('index', [], true)
+ 4 APPPATH\Controllers\Home.php(36): view('index', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->index()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-03-14 03:02:05 --> Too few arguments to function App\Models\indexModel::getReportData(), 1 passed in F:\XAMPP\htdocs\suhu\app\Controllers\FilterController.php on line 19 and exactly 2 expected
+in APPPATH\Models\indexModel.php on line 12.
+ 1 APPPATH\Controllers\FilterController.php(19): App\Models\indexModel->getReportData(null)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\FilterController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FilterController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-03-14 03:02:24 --> Call to undefined function set_value()
+in APPPATH\Views\print.php on line 103.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('print', [], true)
+ 4 APPPATH\Controllers\FilterController.php(28): view('print', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\FilterController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FilterController))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-03-14 03:15:49 --> Cannot use object of type stdClass as array
+in APPPATH\Views\index.php on line 106.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('index', [], true)
+ 4 APPPATH\Controllers\Home.php(36): view('index', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->index()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-03-14 03:15:53 --> Cannot use object of type stdClass as array
+in APPPATH\Views\index.php on line 106.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('index', [], true)
+ 4 APPPATH\Controllers\Home.php(36): view('index', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->index()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-03-14 03:17:08 --> Too few arguments to function App\Models\indexModel::getReportData(), 1 passed in F:\XAMPP\htdocs\suhu\app\Controllers\FilterController.php on line 19 and exactly 2 expected
+in APPPATH\Models\indexModel.php on line 12.
+ 1 APPPATH\Controllers\FilterController.php(19): App\Models\indexModel->getReportData(null)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\FilterController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FilterController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-03-14 03:17:27 --> Call to undefined method App\Models\indexModel::getReportData
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\FilterController.php(19): CodeIgniter\Model->__call('getReportData', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\FilterController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FilterController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-03-14 03:18:16 --> Attempt to read property "date" on array
+in APPPATH\Views\print.php on line 134.
+ 1 APPPATH\Views\print.php(134): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "date" on array', 'APPPATH\\Views\\print.php', 134)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\print.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('print', [], true)
+ 5 APPPATH\Controllers\FilterController.php(30): view('print', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\FilterController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FilterController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-03-14 03:19:20 --> Class "App\Models\filterModel" not found
+in APPPATH\Controllers\FilterController.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\FilterController->index()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FilterController))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-03-14 03:19:36 --> Class "App\Models\filterModel" not found
+in APPPATH\Controllers\FilterController.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\FilterController->index()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FilterController))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-03-14 03:20:37 --> Undefined variable $reportData
+in APPPATH\Views\print.php on line 132.
+ 1 APPPATH\Views\print.php(132): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $reportData', 'APPPATH\\Views\\print.php', 132)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\print.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('print', [], true)
+ 5 APPPATH\Controllers\PrintController.php(19): view('print', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PrintController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PrintController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-03-14 03:23:14 --> Undefined variable $reportData
+in APPPATH\Views\print.php on line 132.
+ 1 APPPATH\Views\print.php(132): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $reportData', 'APPPATH\\Views\\print.php', 132)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\print.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('print', [], true)
+ 5 APPPATH\Controllers\PrintController.php(19): view('print', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PrintController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PrintController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-03-14 03:24:55 --> Attempt to read property "date" on array
+in APPPATH\Views\print.php on line 134.
+ 1 APPPATH\Views\print.php(134): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "date" on array', 'APPPATH\\Views\\print.php', 134)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\print.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('print', [], true)
+ 5 APPPATH\Controllers\PrintController.php(19): view('print', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PrintController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PrintController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-03-14 03:25:23 --> Cannot use object of type stdClass as array
+in APPPATH\Views\print.php on line 134.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('print', [], true)
+ 4 APPPATH\Controllers\FilterController.php(30): view('print', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\FilterController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FilterController))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
