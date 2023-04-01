@@ -63,4 +63,6 @@ void loop() {
   Serial.print(",\"Fire\":");
   Serial.print(firedity);
   Serial.println("}");
+
+  if (readsensor == 0) delay (3000);
 }
