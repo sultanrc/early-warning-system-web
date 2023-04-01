@@ -88,4 +88,6 @@ void loop() {
   temprature = dht.readTemperature();
   humidity = dht.readHumidity();
   Data_to_Sheets(No_of_Parameters,  Humidity,  Temperature,  firedity);
+  
+  if (readsensor == 0) delay (300000);
 }
