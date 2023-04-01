@@ -22,4 +22,4 @@ pred = model.predict(input_data)
 
 pred = pred * std_dataSuhuInd + mean_dataSuhuInd
 
-print(f'Suhu ruangan besok: {pred[0][0]:.2f}')
+print(f'Suhu ruangan besok: {pred[0][0]:.2f}°C')
