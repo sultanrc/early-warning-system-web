@@ -32,9 +32,7 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 $routes->get('/print', 'Report::index');
 $routes->get('/printpdf', 'Home::generate');
-$routes->post('/predict','Python::predict');
-$routes->get('/test', 'Python::index');
-
+$routes->post('/predict','Home::predict');
 
 /*
  * --------------------------------------------------------------------

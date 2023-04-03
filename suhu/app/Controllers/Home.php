@@ -25,6 +25,8 @@ class Home extends BaseController
 
     public function index()
     {
+        // exec('python Python/ews.py > /dev/null &');
+        
         $query = $this->ews->where('status', false)->first();
         
         if ($query) {
@@ -66,5 +68,34 @@ class Home extends BaseController
         ));
 
         helper('form');
+    }
+
+    public function predict()
+    {
+        helper('form');
+        // Mengambil nilai suhu_luar_besok dan suhu_ac_besok dari form
+        $suhu_luar_besok = $this->request->getPost('suhu_luar_besok');
+        $suhu_ac_besok = $this->request->getPost('suhu_ac_besok');
+
+        // Path ke file ews.py
+        $python_script_path = APPPATH . 'Python/ews.py';
+
+        // Menjalankan skrip python dengan argumen yang diberikan
+        $output = shell_exec('python ' . $python_script_path . ' ' . $suhu_luar_besok . ' ' . $suhu_ac_besok);
+
+        $delimiter = "\n";
+        $token = strtok($output, $delimiter);
+        $output_array = [];
+        while ($token !== false) {
+            $output_array[] = $token;
+            $token = strtok($delimiter);
+        }
+
+        // Mengambil baris terakhir
+        $last_line = end($output_array);
+
+        // Mengirimkan hasil dari skrip python ke view
+        $ews = $this->ews->findAll();
+        return view('index', ['last_line' => $last_line, 'ews' => $ews]);
     }
 }
