@@ -14,7 +14,7 @@ char column_name_in_sheets[ ][20] = {"value1","value2","value3"};  /*1. The Tota
 String Sheets_GAS_ID = "AKfycbxWtcVRGbqkdigN3VW5OYN19JHZXI3B0zyvsOmpkRb4Uw5uSaC6vMJXChBl0y3RC9G7DQ";
 int No_of_Parameters = 3;
 
-int readsensor = 0
+int readsensor = 0;
 float humidity = 0;
 float temprature = 0;
 float firedity = 0;
@@ -52,24 +52,24 @@ void setup() {
   digitalWrite(LED_pin1, HIGH);
 }
 
-void showDatainLCD(float Humidity, float Temperature){
+void showDatainLCD(float x, float y){
   lcd.clear();
   lcd.print("TEMP  : ");
-  lcd.print(Temperature);
+  lcd.print(x);
   lcd.print((char)223);
   lcd.print("C");
   lcd.setCursor(0,1);
   lcd.print("HUMID : ");
-  lcd.print(Humidity);
+  lcd.print(y);
   lcd.print("%");
 }
 
 void loop() {
   //Read Temperature and Humidity
-  humidity = dht.readTemperature();
-  temperature = dht.readHumidity();
+  temprature = dht.readTemperature();
+  humidity = dht.readHumidity();
 
-  showDatainLCD(humidity, temperature);
+  showDatainLCD(temprature, humidity);
 
   //blok kode untuk mengecek sensor api
   int i = 0;
@@ -87,7 +87,7 @@ void loop() {
 
   temprature = dht.readTemperature();
   humidity = dht.readHumidity();
-  Data_to_Sheets(No_of_Parameters,  Humidity,  Temperature,  firedity);
+  Data_to_Sheets(No_of_Parameters, temprature, humidity, firedity);
   
   if (readsensor == 0) delay (300000);
 }
