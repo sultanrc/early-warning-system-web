@@ -77,6 +77,10 @@
   margin-bottom: 10px;
 }
 
+.navbar {
+  height: 80px;
+}
+
 nav {
   position: fixed;
   top: 0;
