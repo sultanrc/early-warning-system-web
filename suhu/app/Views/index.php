@@ -30,16 +30,22 @@
     </nav>
     <nav class="navbar navbar-light navbar-expand-md py-2 fixed-top">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center">
-                <span class="d-flex justify-content-center align-items-center me-2">
-                    <img src="<?php echo base_url('assets/images/logo.png'); ?>" alt="Logo">
-                </span>
+            <a class="navbar-brand" href="#">
                 <span style="font-size: 21px;font-family: 'Quicksand', sans-serif;">
                     <strong>Early Warning System</strong>
                 </span>
             </a>
+            <div class="d-flex align-items-center">
+                <div class="border-left mx-2" style="height: 50px;"></div>
+                <img src="<?php echo base_url('assets/images/logo.png'); ?>" alt="Logo"
+                    style="width:50px; margin-right:15px;">
+                <div style="border-left: 1px solid grey; height: 50px;"></div>
+                <img src="<?php echo base_url('assets/images/logo2.png'); ?>" alt="Logo"
+                    style="width:50px; margin-left:15px;">
+            </div>
         </div>
     </nav>
+
     <nav class="navbar navbar-expand-md py-1" style="background: #c7000d;height: 10px;">
         <div class="container">
 
@@ -253,19 +259,6 @@
             </div> -->
         </div>
     </div>
-
-    <section>
-        <div class="col-lg-2 float-end" style="background: #fff; height: 110px;">
-            <span class="d-flex justify-content-center align-items-center me-2"
-                style="margin-top: 40px; position: absolute;">
-                <img src="<?php echo base_url('assets/images/logo.png'); ?>" alt="Logo"
-                    style="width:50px; margin-right:15px;">
-                <div style="border-left: 1px solid grey; height: 50px;"></div>
-                <img src="<?php echo base_url('assets/images/logo2.png'); ?>" alt="Logo"
-                    style="width:50px; margin-left:15px;">
-            </span>
-        </div>
-    </section>
 
     <footer class="text-center text-footer">
         <div class="container-fluid" style="background: #c7000d;height: 20px;">
