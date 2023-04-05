@@ -33,6 +33,8 @@ $routes->get('/', 'Home::index');
 $routes->get('/print', 'Report::index');
 $routes->get('/printpdf', 'Home::generate');
 $routes->post('/predict','Home::predict');
+$routes->get('/insert/(:any)/(:any)/(:any)', 'Home::insert/$1/$2/$3');
+
 
 /*
  * --------------------------------------------------------------------
