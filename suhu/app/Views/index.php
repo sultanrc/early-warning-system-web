@@ -140,7 +140,7 @@
                                         } else if ($value['temp'] >= 31) {
                                             echo '<b style="color:red;">' . $value['temp'] . ' °C <span style="color:red;">&#9888;</span></b>'; // add warning symbol
                                         } else {
-                                            echo '<b style="color:#5d5d5d;">' . $value['temp'] . ' °C </b>'; 
+                                            echo $value['temp'] . ' °C'; 
                                         }
                                     ?>
                                     </td>
