@@ -46,6 +46,29 @@ class Home extends BaseController
         helper('form');
         return view('index', $data);
     }
+    
+     public function insert($temp, $hum, $fa)
+    {
+        // Get the current date and time
+        $date = date('Y-m-d');
+        $time = date('H:i:s');
+
+        // Set empty variable for status
+        $status = '';
+        
+        $data = array(
+            'date' => $date,
+            'time' => $time,
+            'temp' => $temp,
+            'hum' => $hum,
+            'fa' => $fa,
+            'status' => $status
+    
+        );
+        $this->ews->insert($data); 
+
+        return redirect()->to('/');
+    }
 
     public function generate()
     {
