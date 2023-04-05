@@ -254,25 +254,20 @@
         </div>
     </div>
 
-    <footer class="text-center text-footer">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-2" style="background: #fff;height: 110px;">
-                </div>
-                <div class="col" style="background: #fff;">
-                </div>
-                <div class="col-lg-2" style="background: #fff; height: 110px;">
-                    <span class="d-flex justify-content-center align-items-center me-2" style="margin-top: 40px;">
-                        <img src="<?php echo base_url('assets/images/logo.png'); ?>" alt="Logo"
-                            style="width:50px; margin-right:15px;">
-                        <div style="border-left: 1px solid grey; height: 50px;"></div>
-                        <img src="<?php echo base_url('assets/images/logo2.png'); ?>" alt="Logo"
-                            style="width:50px; margin-left:15px;">
-                    </span>
-                </div>
-            </div>
-
+    <section>
+        <div class="col-lg-2 float-end" style="background: #fff; height: 110px;">
+            <span class="d-flex justify-content-center align-items-center me-2"
+                style="margin-top: 40px; position: absolute;">
+                <img src="<?php echo base_url('assets/images/logo.png'); ?>" alt="Logo"
+                    style="width:50px; margin-right:15px;">
+                <div style="border-left: 1px solid grey; height: 50px;"></div>
+                <img src="<?php echo base_url('assets/images/logo2.png'); ?>" alt="Logo"
+                    style="width:50px; margin-left:15px;">
+            </span>
         </div>
+    </section>
+
+    <footer class="text-center text-footer">
         <div class="container-fluid" style="background: #c7000d;height: 20px;">
             <p class="mb-0 mt-1">
             <div style="font-size: 10px;">© 2023 PetroChina. All Rights Reserved. | Powered by Ilmu Komputer UNILA.
