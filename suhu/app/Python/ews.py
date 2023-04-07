@@ -9,7 +9,7 @@ std_dataSuhuOut  = 2.3037897116518424
 std_dataSuhuInd  = 1.5215510019739682
 std_dataSuhu_ac  = 1.3482360774673696
 
-model = load_model('F:/XAMPP/htdocs/suhu/app/Python/mymodel.h5')
+model = load_model(os.getcwd() + '\\app\Python\mymodel.h5')
 
 suhu_luar_besok = float(sys.argv[1])
 suhu_ac_besok = float(sys.argv[2])
