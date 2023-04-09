@@ -351,11 +351,14 @@
     <script>
     $(document).ready(function() {
         $('#mydatatable').DataTable({
-            paging: true
+            paging: true,
+            order: [
+                [0, 'desc'],
+                [1, 'desc']
+            ] // Urutkan berdasarkan kolom 0 (tanggal) dan kolom 1 (waktu), dari yang terbaru ke yang terlama
         });
     });
     </script>
-
     <!-- <script>
         setInterval(function(){
             location.reload();
