@@ -1,11 +1,11 @@
-#Pembuatan aplikasi [DONE]
+-Pembuatan aplikasi [DONE]
   - Dashboard
   - Reporting
-#Penggunaan instrumentasi [DONE]
-#Data analisis [DONE]
+-Penggunaan instrumentasi [DONE]
+-Data analisis [DONE]
   - Data Pre-processing
       - Data cleansing
-#Membangun model [DONE]
+-Membangun model [DONE]
 
 1. Dapat melakukan pengukuran menggunakan sensor. [DONE]
 2. Dapat melakukan pengumpulan data. [DONE]
