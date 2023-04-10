@@ -8,4 +8,4 @@ Link
 http://ews2.infinityfreeapp.com/public/
 
 Link gdrive
-https://drive.google.com/drive/folders/1pdoEWOKtqMTRAisj6haG8QSx2dep1_Fd?usp=sharing
+https://drive.google.com/drive/folders/1NHfH6Y3UOL5r3m6kw2AhTS1vjDtlLh5W?usp=share_link
