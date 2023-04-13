@@ -11,7 +11,7 @@
 #define LED_pin2 D8
 
 char column_name_in_sheets[ ][20] = {"value1","value2","value3"};  /*1. The Total no of column depends on how many value you have created in Script of Sheets;2. It has to be in order as per the rows decided in google sheets*/
-String Sheets_GAS_ID = "AKfycbxWtcVRGbqkdigN3VW5OYN19JHZXI3B0zyvsOmpkRb4Uw5uSaC6vMJXChBl0y3RC9G7DQ";
+String Sheets_GAS_ID = ""; //Deployment ID in Spreadsheet
 int No_of_Parameters = 3;
 
 int readsensor = 0;
@@ -22,9 +22,9 @@ float firedity = 0;
 DHT dht(DHT11PIN, DHTTYPE, 15);
 LiquidCrystal_I2C lcd(0x27, 20, 2); // CHANGE THE 0X27 ADDRESS TO YOUR SCREEN ADDRESS IF NEEDED
 
-String apiKey = "KFZ34WQXEQN8BMYL";
-const char* ssid = "SysAdmin";
-const char* password = "Sys@dm1n123";
+String apiKey = "";
+const char* ssid = "";
+const char* password = "";
 
 void setup() {
   //Setup LED, Serial, DHT, LCD
