@@ -1,11 +1,11 @@
 #include <DHT.h>
 #include <LiquidCrystal_I2C.h>  //Library For
-#define SENSORPIN D5 //Deklarasi sensor api pada pin D5
-#define DHT11PIN D7 //Deklarasi sensor suhu dan kelembaban pada pin D7
+#define SENSORPIN A0 //Deklarasi sensor api pada pin D5
+#define DHT11PIN A1 //Deklarasi sensor suhu dan kelembaban pada pin D7
 #define DHTTYPE DHT11 //Deklarasi tipe sensor DHT11
 
 DHT dht(DHT11PIN, DHTTYPE, 15);
-LiquidCrystal_I2C lcd(0x27, 20, 2);  // CHANGE THE 0X27 ADDRESS TO YOUR SCREEN ADDRESS IF NEEDED
+LiquidCrystal_I2C lcd(0x27, 20, 21);  // CHANGE THE 0X27 ADDRESS TO YOUR SCREEN ADDRESS IF NEEDED
 
 float humidity = 0;
 float temprature = 0;

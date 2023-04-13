@@ -1,6 +1,6 @@
 [
     {
-        "id": "4fa502f867bf9d0f",
+        "id": "97f5709e766444d6",
         "type": "tab",
         "label": "Flow 1",
         "disabled": false,
@@ -8,80 +8,118 @@
         "env": []
     },
     {
-        "id": "09087d8b376c1ca0",
+        "id": "90f6fd3fe454383c",
         "type": "json",
-        "z": "4fa502f867bf9d0f",
+        "z": "97f5709e766444d6",
         "name": "",
         "property": "payload",
         "action": "",
         "pretty": false,
-        "x": 570,
-        "y": 360,
+        "x": 250,
+        "y": 260,
         "wires": [
             [
-                "1cb5957af76f4d8b"
+                "dfa1a76e3e0f3014",
+                "7315c37da8a75e3b"
             ]
         ]
     },
     {
-        "id": "1cb5957af76f4d8b",
+        "id": "dfa1a76e3e0f3014",
         "type": "function",
-        "z": "4fa502f867bf9d0f",
+        "z": "97f5709e766444d6",
         "name": "function 1",
-        "func": "var value = JSON.parse(JSON.stringify(msg.payload));\nvalue = msg;\nvar sensor1 = msg.payload.Temp;\nvar sensor2 = msg.payload.Hum;\nmsg.payload = [sensor1, sensor2];\nmsg.topic = ' INSERT INTO`ews_table`(`date`, `time`, `temp`, `hum`, `fa`) VALUES(NULL, NULL, ?, ?, NULL); ';\nreturn msg; \n",
+        "func": "var value = JSON.parse(JSON.stringify(msg.payload));\nvalue = msg;\n\nvar d = new Date();\nvar year = d.getFullYear();\nvar month = ('0' + (d.getMonth() + 1)).slice(-2);\nvar day = ('0' + d.getDate()).slice(-2);\nvar date = year + \"-\" + month + \"-\" + day;\nvar hours = ('0' + d.getHours()).slice(-2);\nvar minutes = ('0' + d.getMinutes()).slice(-2);\nvar seconds = ('0' + d.getSeconds()).slice(-2);\nvar time = hours + \":\" + minutes + \":\" + seconds;\n\nvar sensor1 = msg.payload.Temp;\nvar sensor2 = msg.payload.Hum;\nvar sensor3 = msg.payload.Fire;\nmsg.payload = [date, time, sensor1, sensor2, sensor3];\nmsg.topic = 'INSERT INTO ews_table(date, time, temp, hum, fa) VALUES (?,?,?,?,?);';\nreturn msg; ",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 780,
-        "y": 360,
+        "x": 440,
+        "y": 260,
         "wires": [
             [
-                "a2f068a7bf460a6c"
+                "5bb93f6468a0a568"
             ]
         ]
     },
     {
-        "id": "a2f068a7bf460a6c",
+        "id": "5bb93f6468a0a568",
         "type": "mysql",
-        "z": "4fa502f867bf9d0f",
+        "z": "97f5709e766444d6",
         "mydb": "f6a1df3789cf03cb",
         "name": "",
-        "x": 1010,
-        "y": 360,
+        "x": 630,
+        "y": 260,
         "wires": [
             []
         ]
     },
     {
-        "id": "e453178eb70e5577",
+        "id": "bb9ab967643a447d",
         "type": "serial in",
-        "z": "4fa502f867bf9d0f",
+        "z": "97f5709e766444d6",
         "name": "",
-        "serial": "65e8ece33e7b35e8",
-        "x": 330,
-        "y": 360,
+        "serial": "e919347e6cc7e713",
+        "x": 110,
+        "y": 260,
         "wires": [
             [
-                "09087d8b376c1ca0"
+                "90f6fd3fe454383c"
             ]
         ]
+    },
+    {
+        "id": "7315c37da8a75e3b",
+        "type": "function",
+        "z": "97f5709e766444d6",
+        "name": "function 2",
+        "func": "var value = JSON.parse(JSON.stringify(msg.payload));\nvalue = msg;\n\nif (msg.payload.Fire == 1){\n    msg.payload = \"Ada Api\";\n    return [msg, null];\n} else if (msg.payload.Temp > 24) {\n    msg.payload = \"Suhu Gede\";\n    return[msg, null];\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 320,
+        "wires": [
+            [
+                "8366773c16c659fb"
+            ]
+        ]
+    },
+    {
+        "id": "8366773c16c659fb",
+        "type": "e-mail",
+        "z": "97f5709e766444d6",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "authtype": "BASIC",
+        "saslformat": true,
+        "token": "oauth2Response.access_token",
+        "secure": true,
+        "tls": true,
+        "name": "emailtesarduino@gmail.com",
+        "dname": "",
+        "credentials": {},
+        "x": 680,
+        "y": 320,
+        "wires": []
     },
     {
         "id": "f6a1df3789cf03cb",
         "type": "MySQLdatabase",
         "name": "",
-        "host": "127.0.0.1",
+        "host": "sql12.freemysqlhosting.net",
         "port": "3306",
-        "db": "ews",
+        "db": "sql12611453",
         "tz": "",
         "charset": "UTF8"
     },
     {
-        "id": "65e8ece33e7b35e8",
+        "id": "e919347e6cc7e713",
         "type": "serial-port",
-        "serialport": "COM4",
+        "serialport": "COM3",
         "serialbaud": "9600",
         "databits": "8",
         "parity": "none",
