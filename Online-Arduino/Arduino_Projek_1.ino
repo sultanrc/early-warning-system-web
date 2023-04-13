@@ -22,8 +22,7 @@ float firedity = 0;
 DHT dht(DHT11PIN, DHTTYPE, 15);
 LiquidCrystal_I2C lcd(0x27, 20, 2); // CHANGE THE 0X27 ADDRESS TO YOUR SCREEN ADDRESS IF NEEDED
 
-String apiKey = "";
-const char* ssid = "";
+const char* ssid = ""; //nama WiFi and Password
 const char* password = "";
 
 void setup() {
