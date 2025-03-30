@@ -1,14 +1,19 @@
-# early-warning-system-web
-Consist of Arduino, PHP for Dashboard and Report, Google App Script, and Node-Red Service. 
+# Early Warning System Web  
 
-The Early Warning System (EWS) is a monitoring system designed to operate the DHT11 sensor to detect temperature and humidity levels. This system will send an email notification if the temperature in the server room exceeds 30°C and if the humidity is higher than 80%. Additionally, the temperature and humidity data will be stored in a database and displayed on a website for real-time monitoring.
+This project is a **web-based monitoring system** built using **PHP, HTML, CSS, Bootstrap, and CodeIgniter 4**, with a **local database** for data storage. It is designed to operate the **DHT11 sensor** to detect temperature and humidity levels in a **server room**. The system sends email notifications when predefined thresholds are exceeded and provides a web interface for real-time monitoring.  
 
-Features
-Temperature & Humidity Monitoring: Measures temperature and humidity using the DHT11 sensor.
-Email Alerts: Sends notifications when temperature > 30°C or humidity > 80%.
-Database Integration: Stores data for historical tracking.
-Web Interface: Displays real-time data for monitoring.
+## Tech Stack  
+- **Frontend:** HTML, CSS, Bootstrap  
+- **Backend:** PHP, CodeIgniter 4  
+- **Database:** Localhost (MySQL)  
+- **Hardware:** Arduino + DHT11 + Fire Sensor
+- **Services:** Google App Script, Node-RED  
 
-<img width="1440" alt="image" src="https://github.com/user-attachments/assets/e4ebfae7-ee9d-450a-b361-3849e92c3c30" />
-Full Project Link: this repository is forked from https://github.com/Ahmad-kun/proyek-arduino
+## Screenshot  
+![EWS Web Interface](https://github.com/user-attachments/assets/e4ebfae7-ee9d-450a-b361-3849e92c3c30)  
 
+## Full Project Link  
+
+Modernized EWS with Vue.js and Express.js: [https://github.com/sultanrc/early-warning-system-web-vue](https://github.com/sultanrc/early-warning-system-web-vue/)
+
+This repository is forked from the original project: [https://github.com/Ahmad-kun/proyek-arduino](https://github.com/Ahmad-kun/proyek-arduino)  
